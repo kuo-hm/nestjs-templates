@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import chalk from "chalk";
 import figlet from "figlet";
 import * as fs from "fs";
 import gradient from "gradient-string";
@@ -7,7 +8,6 @@ import inquirer from "inquirer";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import createDirectoryContents from "./createDirectoryContents.js";
-
 const CURR_DIR = process.cwd();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
@@ -15,6 +15,7 @@ const colors = {
   gold: "#FFD700",
   crimson: "#DC143C",
 };
+let projectName;
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
 const QUESTIONS = [
   {
@@ -34,6 +35,15 @@ const QUESTIONS = [
     },
   },
 ];
+async function end() {
+  console.log(chalk.greenBright("🎉 Project created successfully!"));
+  console.log(
+    chalk.greenBright("🚀 Run the following command to start your project:")
+  );
+  console.log(chalk.cyanBright("cd " + projectName));
+  console.log(chalk.cyanBright("npm install"));
+  console.log(chalk.cyanBright("npm run dev"));
+}
 
 const useGradient = (opt) => {
   const titleColor = opt.colors ?? Object.values(colors);
@@ -42,15 +52,17 @@ const useGradient = (opt) => {
 };
 
 async function askProjectName() {
-  inquirer.prompt(QUESTIONS).then((answers) => {
+  await inquirer.prompt(QUESTIONS).then((answers) => {
     const projectChoice = answers["project-choice"];
-    const projectName = answers["project-name"];
+    projectName = answers["project-name"];
     const templatePath = `${__dirname}/templates/${projectChoice}`;
 
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
     createDirectoryContents(templatePath, projectName);
   });
+
+  await end();
 }
 async function welcome() {
   const figletConfig = {

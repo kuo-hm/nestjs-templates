@@ -1,7 +1,8 @@
 import * as fs from "fs";
+
 const CURR_DIR = process.cwd();
 
-const createDirectoryContents = (templatePath, newProjectPath) => {
+const createDirectoryContents = async (templatePath, newProjectPath) => {
   const filesToCreate = fs.readdirSync(templatePath);
 
   filesToCreate.forEach((file) => {
