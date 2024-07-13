@@ -29,6 +29,7 @@ npm run dev
 ## Project Structure
 
 The project follows a modular and feature-based structure:
+
 ```
 project-root/
 ├── prisma/
@@ -58,6 +59,7 @@ project-root/
 │   ├── app.module.ts
 │   └── main.ts
 ```
+
 Key components:
 
 - `prisma/`: Contains Prisma schema and migrations.
@@ -69,7 +71,11 @@ Key components:
 - `main.ts`: The entry point of the application.
 
 This structure promotes modularity, making it easier to maintain and scale the application as it grows.
+
 ## Configuration
 
-[Details on how to configure the various components]
+if you want to generate model from your database, you can use this command:
 
+```console
+npx nestjs-model-generator
+```

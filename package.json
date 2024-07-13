@@ -1,6 +1,6 @@
 {
   "name": "nestjs-templates-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of ready-to-use NestJS project templates",
   "main": "index.js",
   "type": "module",
