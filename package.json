@@ -1,0 +1,37 @@
+{
+  "name": "nestjs-templates-cli",
+  "version": "1.0.1",
+  "description": "A collection of ready-to-use NestJS project templates",
+  "main": "index.js",
+  "type": "module",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuo-hm/nestjs-templates.git"
+  },
+  "author": "Oussama Hmoura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuo-hm/nestjs-templates/issues"
+  },
+  "homepage": "https://github.com/kuo-hm/nestjs-templates#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "chalk-animation": "^2.0.3",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  }
+}

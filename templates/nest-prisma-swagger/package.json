@@ -1,10 +1,8 @@
 {
-  "name": "nest-prisma-swagger",
-  "version": "0.0.1",
+  "name": "project_name",
+  "version": "1.0.0",
   "description": "",
   "author": "",
-  "private": true,
-  "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

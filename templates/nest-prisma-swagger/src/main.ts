@@ -16,8 +16,8 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
   const config = new DocumentBuilder()
-    .setTitle('TEMPLATE API')
-    .setDescription('TEMPLATE API Description')
+    .setTitle('project_name')
+    .setDescription('project_name Description')
     .setVersion('0.1')
     .setExternalDoc('Postman Collection', '/api-json')
     .addTag('TEMPLATE')
