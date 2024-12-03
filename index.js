@@ -17,12 +17,13 @@ const colors = {
 };
 let projectName;
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
+
 const QUESTIONS = [
   {
     name: "project-choice",
     type: "list",
     message: "What project template would you like to generate?",
-    choices: CHOICES,
+    choices: CHOICES.map((choice) => choice.split("-").join(" ")),
   },
   {
     name: "project-name",
@@ -42,6 +43,10 @@ async function end() {
   );
   console.log(chalk.cyanBright("cd " + projectName));
   console.log(chalk.cyanBright("npm install"));
+  console.log(chalk.cyanBright("npm run dev"));
+  console.log(
+    chalk.greenBright("🚀 Run the following command to create a new model:")
+  );
   console.log(chalk.cyanBright("npm run dev"));
 }
 
